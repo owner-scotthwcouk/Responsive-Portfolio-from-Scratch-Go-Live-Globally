@@ -1,0 +1,31 @@
+* --- Episode 2: Dark Mode Logic --- */
+
+/* 1. Add a transition to the body so the colors fade smoothly */
+body {
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* 2. Define what happens when the 'dark-theme' class is active */
+body.dark-theme {
+    --light: #1a1a2e; /* This becomes the new background */
+    --dark: #f4f4f9;  /* This becomes the new text color */
+}
+
+/* 3. Adjust elements that had hard-coded white backgrounds */
+body.dark-theme nav, 
+body.dark-theme .card {
+    background: #16213e; /* A slightly lighter dark for contrast */
+    color: var(--dark);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+/* Style for the toggle button we will add */
+#theme-toggle {
+    cursor: pointer;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+}
