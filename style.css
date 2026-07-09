@@ -35,7 +35,7 @@ header { height: 60vh; display: flex; flex-direction: column; justify-content: c
     border-top: 5px solid var(--primary);
     transition: background-color 2s ease, color 2s ease, box-shadow 2s ease;
 }
-
+// Dark Theme Styles
 body.dark-theme {
     --light: #1a1a2e;
     --dark: #f4f4f9;
