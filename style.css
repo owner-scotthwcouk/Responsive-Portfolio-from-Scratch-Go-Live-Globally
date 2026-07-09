@@ -20,7 +20,7 @@ header { height: 60vh; display: flex; flex-direction: column; justify-content: c
 
 /* 1. Add a transition to the body so the colors fade smoothly */
 body {
-    transition: background 0.4s ease, color 0.4s ease;
+    transition: background 2.0s ease, color 2.0s ease;
 }
 
 /* 2. Define what happens when the 'dark-theme' class is active */
