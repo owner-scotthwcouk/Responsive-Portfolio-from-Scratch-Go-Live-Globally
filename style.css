@@ -16,3 +16,26 @@ header { height: 60vh; display: flex; flex-direction: column; justify-content: c
 
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 5%; }
 .card { background: white; padding: 20px; border-radius: 10px; border-top: 5px solid var(--primary); }
+
+// Dark Theme Styles
+body.dark-theme {
+    --light: #1a1a2e;
+    --dark: #f4f4f9;
+}
+
+body.dark-theme nav,
+body.dark-theme .card {
+    background-color: #16211e;
+    color: var(--dark);
+    box-shadow: 0 4px 15 px rgba(0,0,0,0.5);
+}
+
+#theme-toggle {
+    cursor: pointer;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-family: "inter", sans-serif;
+}

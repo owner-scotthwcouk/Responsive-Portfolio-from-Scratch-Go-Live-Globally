@@ -35,7 +35,7 @@ const themeBtn = document.getElementById('theme-toggle');
 themeBtn.addEventListener('click', () => {
     // This flips the 'dark-theme' class on and off on the body tag
     document.body.classList.toggle('dark-theme');
-    
+ 
     // Switch the button text based on the current mode
     if (document.body.classList.contains('dark-theme')) {
         themeBtn.innerText = "Light Mode";
