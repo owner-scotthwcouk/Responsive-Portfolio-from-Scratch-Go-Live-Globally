@@ -1,41 +1,122 @@
+/* ============================================================
+   EPISODE 1: CORE VARIABLES & RESET
+   ============================================================ */
 :root {
-    --primary: #8b0bf5; /* Change this to your favorite color! */
+    --primary: #6e34db; 
     --dark: #2c3e50;
     --light: #f4f4f9;
+    --white: #ffffff; /* We'll use this for cards and nav */
 }
 
-body { font-family: 'Inter', sans-serif; margin: 0; background: var(--light); color: var(--dark); }
-
-nav { display: flex; justify-content: space-between; padding: 1rem 5%; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-.logo span { color: var(--primary); font-weight: bold; }
-nav ul { list-style: none; display: flex; gap: 20px; }
-
-header { height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-.highlight { color: var(--primary); }
-.btn { margin-top: 20px; padding: 12px 25px; background: var(--primary); color: white; text-decoration: none; border-radius: 5px; }
-
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 5%; }
-.card { background: white; padding: 20px; border-radius: 10px; border-top: 5px solid var(--primary); }
-
-// Dark Theme Styles
+/* ============================================================
+   EPISODE 2: THE DARK MODE "LOGIC"
+   ============================================================ */
+/* When JS adds .dark-theme to the body, these variables swap! */
 body.dark-theme {
-    --light: #1a1a2e;
-    --dark: #f4f4f9;
+    --light: #1a1a2e; /* The new deep background */
+    --dark: #f4f4f9;  /* The new bright text */
+    --white: #16213e; /* The new card/nav background */
+}
+/* ============================================================
+   GLOBAL STYLES
+   ============================================================ */
+   body { 
+    font-family: 'Inter', sans-serif; 
+    margin: 0; 
+    background: var(--light); 
+    color: var(--dark); 
+    /* Smooth transition makes the theme swap feel high-end */
+    transition: background 0.4s ease, color 0.4s ease; 
+}
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+   nav { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 1rem 5%; 
+    background: var(--white); 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    transition: background 0.4s ease;
+}
+.logo span { 
+    color: var(--primary); 
+    font-weight: bold; 
 }
 
-body.dark-theme nav,
-body.dark-theme .card {
-    background-color: #16211e;
-    color: var(--dark);
-    box-shadow: 0 4px 15 px rgba(0,0,0,0.5);
+nav ul { 
+    list-style: none; 
+    display: flex; 
+    align-items: center;
+    gap: 20px; 
 }
-
+/* THE TOGGLE BUTTON */
 #theme-toggle {
     cursor: pointer;
     background: var(--primary);
     color: white;
     border: none;
-    padding: 5px 15px;
+    padding: 8px 16px;
     border-radius: 20px;
-    font-family: "inter", sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+   header { 
+    height: 60vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+}
+
+.highlight { 
+    color: var(--primary); 
+}
+
+.btn { 
+    margin-top: 20px; 
+    padding: 12px 25px; 
+    background: var(--primary); 
+    color: white; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+.btn:hover {
+    transform: translateY(-5px);
+}
+
+/* ============================================================
+   PROJECTS GRID
+   ============================================================ */
+   .grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px; 
+    padding: 5%; 
+}
+
+.card { 
+    background: var(--white); 
+    padding: 20px; 
+    border-radius: 10px; 
+    border-top: 5px solid var(--primary); 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: background 0.4s ease, transform 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
